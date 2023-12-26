@@ -1,4 +1,6 @@
 import java.sql.Date;
+import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,9 +13,11 @@ public class Main {
         LibraryService.takeBook(1L, 1L);
         LibraryService.returnBook("1", "1");
         LibraryService.takeBook(2L, 1L);
-        System.out.println(LibraryService.getUserBooks("2"));
-        System.out.println(LibraryService.getUserBorrowedBooks());
-        Date.
+        for (Map.Entry<User, List<Book>> s : LibraryService.getUserBorrowedBooks().entrySet()) {
+            System.out.print(s.getKey() + " - ");
+            s.getValue().forEach(System.out::println);
+        }
+
 
     }
 }

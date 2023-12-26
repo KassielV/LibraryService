@@ -30,4 +30,8 @@ public final class User {
         return userId;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }

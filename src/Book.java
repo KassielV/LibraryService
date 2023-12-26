@@ -37,4 +37,9 @@ public final class Book {
     public void setAvailable(boolean available) {
         isAvailable = available;
     }
+
+    @Override
+    public String toString() {
+        return title;
+    }
 }
